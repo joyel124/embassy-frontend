@@ -17,6 +17,6 @@ export class ResetPasswordComponent implements OnInit{
 
   }
   onSubmit() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Se ha enviado un correo para restablecer la contraseña' });
+    this.messageService.add({ severity: 'success', summary: 'Correo Enviado', detail: 'Se te ha enviado un correo para restablecer tu contraseña' });
   }
 }
