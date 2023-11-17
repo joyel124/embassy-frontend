@@ -14,6 +14,7 @@ import {FormsModule} from "@angular/forms";
 import { ToastModule } from 'primeng/toast';
 import {MessageService} from "primeng/api";
 import { HomeComponent } from './appointment/pages/home/home.component';
+import { ResetPasswordComponent } from './auth/pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './appointment/pages/home/home.component';
     LanguageButtonComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

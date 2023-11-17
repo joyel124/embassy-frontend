@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {LandingpageComponent} from "./common/pages/landingpage/landingpage.component";
 import {PageNotFoundComponent} from "./common/pages/page-not-found/page-not-found.component";
 import {HomeComponent} from "./appointment/pages/home/home.component";
+import {ResetPasswordComponent} from "./auth/pages/reset-password/reset-password.component";
 
 const routes: Routes = [
   //Rutas sin protección
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'landing', component: LandingpageComponent},
   //Rutas sin protección de redirección a home si el usuario está autenticado
   {path: 'home', component: HomeComponent},
+  {path: 'reset-password', component: ResetPasswordComponent},
   //Rutas con protección
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: "page-not-found", pathMatch: "full"},
