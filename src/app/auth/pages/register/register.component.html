@@ -2,7 +2,7 @@
   <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-      <div class="relative flex flex-col max-w-md p-6 rounded-xl border-2 sm:p-10" style="background-color: #FFFFFF; border-color: #adabab;">
+      <div class="relative flex flex-col max-w-md p-6 rounded-xl border-2 sm:p-10" style="background-color: #FFFFFF; border-color: #262958;">
         <button (click)="closeRegister()" type="button" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -12,45 +12,42 @@
           <div class="flex justify-center">
             <img src="https://uploads.mwp.mprod.getusinfo.com/uploads/sites/4/2021/03/dos_seal-1.png" alt="Logo" class="w-24 h-24" />
           </div>
-          <div class="mb-8 text-center" style="color: #adabab">
+          <div class="mb-8 text-center" style="color: #262958">
             <h1 class="my-3 text-4xl font-bold">Registrate</h1>
             <p class="text-sm"></p>
           </div>
-          <div class="divider">
-            <span>O</span>
-          </div>
           <form novalidate="" action="" class="space-y-12">
-            <div class="space-y-4" style="color: #adabab">
+            <div class="space-y-4" style="color: #262958">
               <div>
                 <label for="email" class="block mb-2 text-sm text-start">Correo</label>
-                <input type="email" [(ngModel)]="username" name="email" id="email" placeholder="example@hotmail.com" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input type="email" [(ngModel)]="username" name="email" id="email" placeholder="example@hotmail.com" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
               <div>
                 <label for="name" class="block mb-2 text-sm text-start">Nombre</label>
-                <input type="text" [(ngModel)]="name" name="name" id="name" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input type="text" [(ngModel)]="name" name="name" id="name" placeholder="Nombre" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
               <div>
                 <label for="lastname" class="block mb-2 text-sm text-start">Apellido</label>
-                <input type="text" [(ngModel)]="lastname" name="lastname" id="lastname" placeholder="Apellido" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input type="text" [(ngModel)]="lastname" name="lastname" id="lastname" placeholder="Apellido" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
               <div>
                 <div class="flex justify-between mb-2">
                   <label for="password" class="text-sm">Contraseña</label>
                 </div>
-                <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
               <div>
                 <div class="flex justify-between mb-2">
                   <label for="password" class="text-sm">Repita Contraseña</label>
                 </div>
-                <input type="password" [(ngModel)]="password2" name="password" id="passwordrepeted" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input type="password" [(ngModel)]="password2" name="password" id="passwordrepeted" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
             </div>
-            <div class="space-y-2" style="color: #adabab">
+            <div class="space-y-2" style="color: #262958">
               <div>
-                <button (click)="checkPasswordsMatch()" type="button" class="w-full px-8 py-3 font-semibold rounded-md text-white" style="background-color: #adabab">Registrate</button>
+                <button (click)="checkPasswordsMatch()" type="button" class="w-full px-8 py-3 font-semibold rounded-md text-white" style="background-color: #262958">Registrate</button>
               </div>
-              <p class="px-6 text-sm text-center dark:text-gray-400">¿Ya tienes una cuenta?
+              <p class="px-6 text-sm text-center" style="color: #262958">¿Ya tienes una cuenta?
                 <a rel="noopener noreferrer" class="hover:underline font-bold cursor-pointer" (click)="openLogin()">Inicia sesión</a>.
               </p>
             </div>

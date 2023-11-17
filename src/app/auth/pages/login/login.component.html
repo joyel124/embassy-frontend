@@ -2,7 +2,7 @@
   <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
-      <div class="relative flex flex-col max-w-md p-6 rounded-xl border-2 sm:p-10" style="background-color: #FFFFFF; border-color: #adabab;">
+      <div class="relative flex flex-col max-w-md p-6 rounded-xl border-2 sm:p-10" style="background-color: #FFFFFF; border-color: #262958;">
         <button (click)="closeLogin()" type="button" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -12,30 +12,27 @@
           <div class="flex justify-center">
             <img src="https://uploads.mwp.mprod.getusinfo.com/uploads/sites/4/2021/03/dos_seal-1.png" alt="Logo" class="w-24 h-24" />
           </div>
-          <div class="mb-8 text-center" style="color: #adabab">
+          <div class="mb-8 text-center" style="color: #262958">
             <h1 class="my-3 text-4xl font-bold">Iniciar Sesión</h1>
             <p class="text-sm"></p>
           </div>
-          <div class="divider">
-            <span>O</span>
-          </div>
           <form novalidate="" action="" class="space-y-12">
-            <div class="space-y-4" style="color: #adabab">
+            <div class="space-y-4" style="color: #262958">
               <div>
                 <label for="username" class="block mb-2 text-sm text-start">Correo</label>
-                <input [(ngModel)]="username" type="email" name="username" id="username" placeholder="example@hotmail.com" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input [(ngModel)]="username" type="email" name="username" id="username" placeholder="example@hotmail.com" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
               <div>
                 <div class="flex justify-between mb-2">
                   <label for="password" class="text-sm">Contraseña</label>
                   <a rel="noopener noreferrer" href="#/resetpassword" class="text-xs hover:underline">¿Olvidaste tu contraseña?</a>
                 </div>
-                <input [(ngModel)]="password" type="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #adabab; border-color: #adabab;">
+                <input [(ngModel)]="password" type="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-white" style="color: #262958; border-color: #262958;">
               </div>
             </div>
-            <div class="space-y-2" style="color: #adabab">
+            <div class="space-y-2" style="color: #262958">
               <div>
-                <a><button (click)="login()" type="button" class="w-full px-8 py-3 font-semibold rounded-md text-white" style="background-color: #adabab">Iniciar Sesión</button></a>
+                <a><button (click)="login()" type="button" class="w-full px-8 py-3 font-semibold rounded-md text-white" style="background-color: #262958;">Iniciar Sesión</button></a>
               </div>
               <p class="px-6 text-sm text-center">¿No tienes una cuenta?
                 <a rel="noopener noreferrer" class="cursor-pointer hover:underline font-bold" (click)="openRegister()">Registrate</a>.
