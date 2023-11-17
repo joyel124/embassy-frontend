@@ -1,0 +1,24 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#262958;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:38px;
+  box-shadow: 2px 2px 3px #262958;
+  z-index:100;
+}
+
+.my-float{
+  margin-bottom:16px;
+}
+
+
+span, p{
+  color: #D1D1D1;
+}

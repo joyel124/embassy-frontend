@@ -1,0 +1,30 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+.float{
+  position:fixed;
+  top:20px;
+  right:20px;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:38px;
+  z-index:100;
+}
+.divider{
+  background: #ddd;
+  height: 2px;
+  display: block;
+  position: relative;
+  width: 80%;
+  margin: 30px auto;
+}
+.divider span{
+  width: 30px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  top: -12px;
+  text-align: center;
+  color: #999;
+}

@@ -1,0 +1,11 @@
+.float{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background-color:#0DA5F2;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:38px;
+  z-index:100;
+}

@@ -1,0 +1,18 @@
+<div class="flex flex-row justify-center">
+  <div class="flex-none p-2 dropdown-container">
+    <button (click)="showDropdownOptions()" class="flex flex-row justify-between w-20 px-2 py-2 text-gray-700 bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600">
+      <span class="fiCircle select-none fi fis ${{language}}"></span>
+      <svg id="arrow-down" class="hidden w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+      <svg id="arrow-up" class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" /></svg>
+    </button>
+    <div id="options"
+         [ngClass]="{'dropdown-menu': true, 'active': !isOptionsHidden}"
+         class="w-20 py-2 mt-2 bg-white rounded-lg shadow-xl text-center">
+      <a (click)="setLanguage(option.name, option.code)"
+         *ngFor="let option of languages"
+         class="block px-4 py-2 text-gray-800 hover:bg-blue-400 hover:text-white">
+        <span class="fiCircle bg-[linear-gradient(180deg,_#ED2939_33.333%,_#FFF_33.333%_66.666%,_#ED2939_66.666%)] fi fis ${{ option.name }}"></span>
+      </a>
+    </div>
+  </div>
+</div>
