@@ -15,6 +15,10 @@ import { ToastModule } from 'primeng/toast';
 import {MessageService} from "primeng/api";
 import { HomeComponent } from './appointment/pages/home/home.component';
 import { ResetPasswordComponent } from './auth/pages/reset-password/reset-password.component';
+import {CalendarModule} from "primeng/calendar";
+import { NavbarComponent } from './common/components/navbar/navbar.component';
+import { AppointmentCardComponent } from './common/components/appointment-card/appointment-card.component';
+import { ProfileComponent } from './appointment/pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,18 +29,22 @@ import { ResetPasswordComponent } from './auth/pages/reset-password/reset-passwo
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    NavbarComponent,
+    AppointmentCardComponent,
+    ProfileComponent
   ],
-  imports: [
-    BrowserModule,
-    ButtonModule,
-    ToastModule,
-    BrowserAnimationsModule,
-    RouterLink,
-    RouterOutlet,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        ButtonModule,
+        ToastModule,
+        BrowserAnimationsModule,
+        RouterLink,
+        RouterOutlet,
+        AppRoutingModule,
+        FormsModule,
+        CalendarModule
+    ],
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

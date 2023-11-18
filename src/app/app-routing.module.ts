@@ -4,6 +4,7 @@ import {LandingpageComponent} from "./common/pages/landingpage/landingpage.compo
 import {PageNotFoundComponent} from "./common/pages/page-not-found/page-not-found.component";
 import {HomeComponent} from "./appointment/pages/home/home.component";
 import {ResetPasswordComponent} from "./auth/pages/reset-password/reset-password.component";
+import {ProfileComponent} from "./appointment/pages/profile/profile.component";
 
 const routes: Routes = [
   //Rutas sin protección
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'reset-password', component: ResetPasswordComponent},
   //Rutas con protección
+  {path: 'profile', component: ProfileComponent},
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: "page-not-found", pathMatch: "full"},
 ];

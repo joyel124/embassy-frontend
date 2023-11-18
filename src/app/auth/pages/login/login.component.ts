@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit, OnDestroy{
   async login() {
     const languageCode = localStorage.getItem('languageCode');
     this.messageService.add({severity: 'success', summary: 'Success', detail: '¡Inicio de sesión exitoso!'});
-    /*setTimeout(() => {
+    setTimeout(() => {
       this.router.navigate(['/home']);
-    }, 1000);*/
+    }, 1000);
   }
 }
