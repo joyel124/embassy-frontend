@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-profile',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 export class ProfileComponent {
   name: string = "John Doe";
   email: string = "";
+
+  constructor(private messageService: MessageService) {
+  }
+
+  save() {
+    this.messageService.add({severity: 'success', summary: 'Success', detail: '¡Perfil actualizado!'});
+  }
 }
