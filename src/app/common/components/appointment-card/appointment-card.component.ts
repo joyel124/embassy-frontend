@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-appointment-card',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./appointment-card.component.css']
 })
 export class AppointmentCardComponent {
+  constructor(private router: Router, private messageService: MessageService) {
+  }
 
+  editAppointment() {
+    this.router.navigate(['/edit-appointment']);
+  }
+  deleteAppointment() {
+    this.messageService.add({severity:'success', summary:'Success', detail:'Cita eliminada'});
+  }
 }

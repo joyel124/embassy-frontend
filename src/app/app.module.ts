@@ -19,6 +19,9 @@ import {CalendarModule} from "primeng/calendar";
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 import { AppointmentCardComponent } from './common/components/appointment-card/appointment-card.component';
 import { ProfileComponent } from './appointment/pages/profile/profile.component';
+import {HttpClientModule} from "@angular/common/http";
+import { NewAppointmentComponent } from './appointment/pages/new-appointment/new-appointment.component';
+import { EditAppointmentComponent } from './appointment/pages/edit-appointment/edit-appointment.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +35,15 @@ import { ProfileComponent } from './appointment/pages/profile/profile.component'
     ResetPasswordComponent,
     NavbarComponent,
     AppointmentCardComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewAppointmentComponent,
+    EditAppointmentComponent
   ],
     imports: [
         BrowserModule,
         ButtonModule,
         ToastModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         RouterLink,
         RouterOutlet,

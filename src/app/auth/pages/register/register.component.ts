@@ -13,7 +13,7 @@ import {Subscription} from "rxjs";
 export class RegisterComponent implements OnInit, OnDestroy{
   public i18nService: any;
   isOpenRegister: boolean = false;
-  username = '';
+  email = '';
   name = '';
   lastname = '';
   password = '';
@@ -43,15 +43,24 @@ export class RegisterComponent implements OnInit, OnDestroy{
     this.authService.openLogin();
   }
   async onSignup() {
-    this.authService.closeRegister();
-    this.authService.openLogin();
+    try {
+      await this.authService.register(this.email, this.name, this.lastname, this.password);
+      // Registro exitoso, redirige al usuario a otra página o muestra un mensaje de éxito.
+      console.log('Registro exitoso');
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: '¡Registro exitoso!' });
+      this.authService.closeRegister();
+      this.authService.openLogin();
+    } catch (error) {
+      // Manejar los errores de registro y mostrar mensajes de error en el componente.
+      console.error('Error en el registro:', error);
+    }
   }
   checkPasswordsMatch(): void {
     const regexContrasenaSegura = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const regexFormatoCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (this.password === this.password2 && this.password !== '' && this.password2 !== '') {
-      if (regexContrasenaSegura.test(this.password) && regexFormatoCorreo.test(this.username)) {
+      if (regexContrasenaSegura.test(this.password) && regexFormatoCorreo.test(this.email)) {
         // La contraseña es segura y el correo tiene un formato válido
         this.passwordsMatch = true;
         this.onSignup();
@@ -66,7 +75,7 @@ export class RegisterComponent implements OnInit, OnDestroy{
           this.messageService.add({ severity: 'error', summary: 'Error', detail: 'La contraseña no es segura. Debe tener al menos 8 caracteres y contener una combinación de letras mayúsculas, letras minúsculas, números y caracteres especiales (@$!%*?&)' });
         }
 
-        if (!regexFormatoCorreo.test(this.username)) {
+        if (!regexFormatoCorreo.test(this.email)) {
           const languageCode = localStorage.getItem('languageCode');
           this.messageService.add({ severity: 'error', summary: 'Error', detail: 'El correo electrónico no tiene un formato válido' });
         }

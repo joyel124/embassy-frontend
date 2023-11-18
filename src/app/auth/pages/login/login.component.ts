@@ -5,8 +5,7 @@ import {Subscription} from "rxjs";
 import {MessageService} from "primeng/api";
 
 interface AuthResponse {
-  auth: boolean;
-  token: string;
+  access_token: string;
 }
 @Component({
   selector: 'app-login',
@@ -17,7 +16,7 @@ interface AuthResponse {
 export class LoginComponent implements OnInit, OnDestroy{
   public i18nService: any;
   isOpenLogin: boolean = false;
-  username = '';
+  email = '';
   password = '';
   user: any;
   loggedIn: any;
@@ -46,10 +45,24 @@ export class LoginComponent implements OnInit, OnDestroy{
     this.authService.openRegister();
   }
   async login() {
-    const languageCode = localStorage.getItem('languageCode');
-    this.messageService.add({severity: 'success', summary: 'Success', detail: '¡Inicio de sesión exitoso!'});
-    setTimeout(() => {
-      this.router.navigate(['/home']);
-    }, 1000);
+    try {
+      const response = await this.authService.login(this.email, this.password) as AuthResponse;
+      // Manejar la respuesta del backend aquí
+      if (response.access_token) {
+        //console.log(response);
+        // Almacenar el token en el almacenamiento local o en las cookies
+        localStorage.setItem('token', response.access_token);
+        localStorage.setItem('email', this.email);
+        this.messageService.add({severity: 'success', summary: 'Success', detail: '¡Inicio de sesión exitoso!'});
+        setTimeout(async () => {
+          await this.router.navigate(['/home']);
+        }, 1000);
+      }
+    } catch (error) {
+      // Manejar los errores de inicio de sesión
+      console.error('Error en el inicio de sesión:', error);
+      this.messageService.add({severity: 'error', summary: 'Error', detail: '¡Error en el inicio de sesión!'});
+      //this.toastr.error('¡Contraseña o Correo Incorrecto!', '¡Error!');
+    }
   }
 }

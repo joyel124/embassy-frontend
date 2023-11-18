@@ -16,6 +16,7 @@ export class NavbarComponent {
   constructor(private messageService: MessageService, private router: Router) {
   }
   logout() {
+    localStorage.clear();
     this.messageService.add({severity: 'success', summary: 'Success', detail: '¡Cierre de sesión exitoso!'});
     setTimeout(() => {
       this.router.navigate(['/']);
