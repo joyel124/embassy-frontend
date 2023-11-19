@@ -14,7 +14,7 @@ interface AuthResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://20.42.82.191:8000/'; // url produccion
+  private apiUrl = 'http://20.42.82.191:8000'; // url produccion
   //private apiUrl = 'http://192.168.1.6:8000'; // Reemplaza esta URL con la URL de tu backend
   //private apiUrl = 'http://192.168.18.12:8000';
   private isOpenLogin = false;
