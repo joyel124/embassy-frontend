@@ -1,9 +1,8 @@
 <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3">
   <div class="md:flex">
     <div class="p-8">
-      <div class="uppercase tracking-wide text-xl text-indigo-500 font-bold">Dia: 12/12/23</div>
-      <p class="block mt-1 text-lg leading-tight font-medium text-black">Hora: 13:00 - 14:00</p>
-      <p class="mt-2 text-gray-500">Nombre y Apellido: Christian Joel</p>
+      <div class="uppercase tracking-wide text-xl text-indigo-500 font-bold">Dia: {{appointmentData.date}}</div>
+      <p class="block mt-1 text-lg leading-tight font-medium text-black">Hora: {{appointmentData.time}}</p>
       <button (click)="editAppointment()" class="mt-5 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
         Reprogramar Cita
       </button>

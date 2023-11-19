@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {Observable, retry, throwError} from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from 'src/app/auth/model/user';
 
@@ -8,8 +8,8 @@ import { User } from 'src/app/auth/model/user';
   providedIn: 'root'
 })
 export class LookingAppointmentService {
-  //private apiUrl = 'http://192.168.1.6:8000'; // Reemplaza esta URL con la URL de tu backend
-  private apiUrl = 'http://192.168.18.12:8000';
+  private apiUrl = 'http://192.168.1.6:8000'; // Reemplaza esta URL con la URL de tu backend
+  //private apiUrl = 'http://192.168.18.12:8000';
   constructor(private http: HttpClient) { }
 
   getUser() : Observable<User> {
@@ -29,6 +29,47 @@ export class LookingAppointmentService {
         throw error;
       })
     ).toPromise();
+  }
+
+  handleError(error: HttpErrorResponse){
+    if (error.error instanceof ErrorEvent){
+      console.error(
+        `An error ocurred ${error.status}, body was ${error.error}`
+      );
+    }
+    else{
+      console.error(
+        `Backend returned code ${error.status}, body was: ${error.error}`
+      );
+    }
+    return throwError(
+      () =>
+        new Error("Something happened with request, please try again later.")
+    );
+  }
+
+  getAvailableTimes(date: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/appointments-by-date?date=${date}`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  updateAppointmentStatus(email: string, appointmentId: number): Observable<any>{
+    const formData = new FormData();
+    formData.append('appointment_id', appointmentId.toString());
+    formData.append('email', email);
+    return this.http.patch<any>(`${this.apiUrl}/add-appointment-status`, formData)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  deleteUserIdAppointment(appointmentId: number): Observable<any>{
+    const formData = new FormData();
+    formData.append('appointment_id', appointmentId.toString());
+    return this.http.patch<any>(`${this.apiUrl}/delete-appointment-status`, formData)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getAppointmentsByUser(email: string): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/appointments-by-email?email=${email}`)
+      .pipe(retry(2), catchError(this.handleError));
   }
   /*
   async updateStatus(Email: string, Looking_Appointment: string) : Promise<void | undefined> {

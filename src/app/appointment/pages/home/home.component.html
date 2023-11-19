@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="mx-auto grid max-w-screen-lg px-6 pb-10">
-    <div class="relative flex flex-col mx-auto items-center rounded-[10px] border-[1px] border-gray-200 max-w-screen-lg p-4 bg-white bg-clip-border shadow-md shadow-[#F3F3F3]">
+    <div class="relative flex flex-col  items-center rounded-[10px] border-[1px] border-gray-200 max-w-screen-lg p-4 bg-white bg-clip-border shadow-md shadow-[#F3F3F3]">
       <div class="flex items-center justify-between rounded-t-3xl p-3 w-full">
         <div class="text-lg font-bold" style="color:#262958;">
           Lista de citas
@@ -18,7 +18,13 @@
         </button>
       </div>
       <div class="flex flex-col h-full w-full items-start justify-between rounded-md border-[1px] border-[transparent]">
-        <app-appointment-card></app-appointment-card>
+        <div *ngFor="let appointment of formData">
+          <app-appointment-card
+            [appointmentData]="appointment"
+            (edit)="editAppointment(appointment.id)"
+            (delete)="deleteAppointment(appointment.id)">
+          </app-appointment-card>
+        </div>
       </div>
     </div>
   </div>

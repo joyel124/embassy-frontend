@@ -1,7 +1,4 @@
-button{
-  background-color: #323573;
-  color: white;
-}
+
 /* En tu archivo de estilos CSS */
 :host ::ng-deep .p-calendar .p-inputtext {
   background-color: #E5E7EB; /* O el color de fondo que desees */
