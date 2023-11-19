@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ```shell
 git clone https://github.com/joyel124/embassy-frontend.git
-cd intern-angular
+cd embassy-frontend
 ```
 
 ### Install npm packages
