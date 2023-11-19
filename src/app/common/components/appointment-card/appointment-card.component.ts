@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {Router} from "@angular/router";
 import {MessageService} from "primeng/api";
 
@@ -7,6 +7,7 @@ import {MessageService} from "primeng/api";
   templateUrl: './appointment-card.component.html',
   styleUrls: ['./appointment-card.component.css']
 })
+
 export class AppointmentCardComponent {
   constructor(private router: Router, private messageService: MessageService) {
   }

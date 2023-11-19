@@ -1,8 +1,7 @@
-export interface User{
-  id: number;
-  Fist_Name: string;
-  Last_Name: string;
-  Email: string;
-  Password: string;
-  Looking_Appointment: boolean;
+export class User{
+  ID?: number;
+  First_Name?: string;
+  Last_Name?: string;
+  Email?: string;
+  Looking_Appointment?: boolean;
 }
