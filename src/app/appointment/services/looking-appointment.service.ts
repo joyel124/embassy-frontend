@@ -8,7 +8,7 @@ import { User } from 'src/app/auth/model/user';
   providedIn: 'root'
 })
 export class LookingAppointmentService {
-  private apiUrl = 'http://20.42.82.191:8000'; // url produccion
+  private apiUrl = 'https://embassy-api.vercel.app'; // url produccion
   //private apiUrl = 'http://192.168.1.6:8000'; // Reemplaza esta URL con la URL de tu backend
   //private apiUrl = 'http://192.168.18.12:8000';
   constructor(private http: HttpClient) { }
