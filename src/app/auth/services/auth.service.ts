@@ -129,7 +129,7 @@ export class AuthService {
     } catch (error) {
       const languageCode = localStorage.getItem('languageCode');
       //this.toastr.error('El correo ya existe', 'Error');
-      this.messageService.add({severity:'error', summary: 'Error', detail: 'El correo ya existe'});
+      this.messageService.add({severity:'error', summary: 'Upps', detail: 'Hubo un error vuelva a intentarlo'});
       // Manejar los errores de registro
       console.error(error);
       throw error; // Propaga el error para que el componente que realiza la llamada pueda manejarlo.
