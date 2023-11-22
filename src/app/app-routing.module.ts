@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
   {path: 'new-appointment', component: NewAppointmentComponent, canActivate: [AuthGuardService]},
-  {path: 'edit-appointment', component: EditAppointmentComponent, canActivate: [AuthGuardService]},
+  {path: 'edit-appointment/:id', component: EditAppointmentComponent, canActivate: [AuthGuardService]},
   {path: 'page-not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: "page-not-found", pathMatch: "full"},
 ];

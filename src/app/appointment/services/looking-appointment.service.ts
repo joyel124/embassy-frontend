@@ -13,9 +13,9 @@ export class LookingAppointmentService {
   //private apiUrl = 'http://192.168.18.12:8000';
   constructor(private http: HttpClient) { }
 
-  getUser() : Observable<User> {
+  getUser() : Observable<any> {
     let email = localStorage.getItem('email')!;
-    return this.http.get<User>(`${this.apiUrl}/userbyemail?Email=${email}`);
+    return this.http.get<any>(`${this.apiUrl}/userbyemail?Email=${email}`);
   }
   updateStatus(Email:string, Looking_Appointment: string) {
     const data = new FormData();

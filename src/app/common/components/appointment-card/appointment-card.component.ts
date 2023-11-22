@@ -20,7 +20,8 @@ export class AppointmentCardComponent {
 
   editAppointment() {
     this.edit.emit(this.appointmentData.id);
-    this.router.navigate(['/edit-appointment']);
+    console.log(this.appointmentData.id);
+    this.router.navigate(['/edit-appointment', this.appointmentData.id]);
   }
   deleteAppointment() {
     this.delete.emit(this.appointmentData.id);
